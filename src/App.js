@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <section className="todoapp">
+
+        <header className="header">
+          <h1>todos</h1>
+          <input className="new-todo"
+                 placeholder="What needs to be done?"
+                 autoFocus />
+        </header>
+
+        <section className="main">
+          <input className="toggle-all"
+                 type="checkbox" />
+            <ul className="todo-list">
+              <li>
+                <div className="view">
+                  <input className="toggle"
+                         type="checkbox" />
+                    <label>Todo Title</label>
+                    <button className="destroy" />
+                </div>
+                <input className="edit" />
+              </li>
+            </ul>
+        </section>
+
+        <Footer />
+
+      </section>
   );
 }
 
