@@ -29,7 +29,10 @@ function List(props) {
         <input className="toggle-all"
                type="checkbox"/>
         <ul className="todo-list">
-          {props.items.map(item => <ListItem item={item} /> )}
+          {props.items.map((item, index) =>  (
+              <ListItem item={item}
+                        onRemoveItem={() => props.onRemoveItem(index)} /> )
+          )}
         </ul>
       </section>
   )

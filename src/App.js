@@ -14,15 +14,23 @@ import List from "./components/List";
 function App() {
   const [items, setItems] = useState([]);
 
+
+
   const addItem = (newText) => {
     const updateItems = [...items, {title: newText}];
     setItems(updateItems);
   }
 
+  const removeItem = (index) => {
+    const updatedItems =  items.splice(index, 1)
+        .concat( items.splice(index + 1));
+    setItems(updatedItems);
+  }
+
   return (
       <section className="todoapp">
         <Header title="Todos" onAddItem={addItem}/>
-        <List items={items} />
+        <List items={items} onRemoveItem={removeItem} />
         <Footer />
       </section>
   );

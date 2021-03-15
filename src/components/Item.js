@@ -1,4 +1,4 @@
-function ListItem({item}) {
+function ListItem({item, onRemoveItem}) {
   return (
       <li>
         <div className="view">
@@ -6,7 +6,7 @@ function ListItem({item}) {
                  checked={item.completed}
                  type="checkbox"/>
           <label>{item.title}</label>
-          <button className="destroy" />
+          <button className="destroy" onClick={onRemoveItem}/>
         </div>
         <input className="edit"/>
       </li>
