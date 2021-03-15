@@ -24,7 +24,7 @@ function App() {
       <section className="todoapp">
         <Header title="Todos" onAddItem={addItem}/>
         <List items={todos}  />
-         {/*<Usders users={} />*/}
+        {/* <Users users={} />*/}
         <Footer />
       </section>
   );

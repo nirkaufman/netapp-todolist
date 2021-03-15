@@ -13,7 +13,7 @@ export function useList(url, initialList, limit) {
 
   const addItem = (item) => {
     if(counter.current === limit) {
-      alert('LIMIT TO 5');
+      alert(`Limit to ${limit}`);
       return;
     }
     const updateItems = [...items, item];
