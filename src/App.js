@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import List from "./components/List";
@@ -14,13 +14,22 @@ import List from "./components/List";
 function App() {
   const [items, setItems] = useState([]);
 
+  useEffect(() =>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then( (results) => results.json())
+        .then( items => setItems(items))
+  },[])
 
+  useEffect(() => {
+    if(items.length > 0) {
+      console.log('item added')
+    }
+  }, [items])
 
   const addItem = (newText) => {
     const updateItems = [...items, {title: newText}];
     setItems(updateItems);
   }
-
   const removeItem = (index) => {
     const updatedItems =  items.splice(index, 1)
         .concat( items.splice(index + 1));
