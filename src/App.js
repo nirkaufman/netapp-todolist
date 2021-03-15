@@ -6,8 +6,8 @@ import List from "./components/List";
 function App() {
   const [items, setItems] = useState([]);
 
-  const addItem = (title) => {
-    const updateItems = [...items, {title}];
+  const addItem = (newText) => {
+    const updateItems = [...items, {title: newText}];
     setItems(updateItems);
   }
 

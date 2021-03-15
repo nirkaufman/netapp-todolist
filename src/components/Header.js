@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 function Header(props) {
 
   function handleKeyDown(event) {
