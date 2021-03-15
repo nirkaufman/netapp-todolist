@@ -3,6 +3,14 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import List from "./components/List";
 
+/**
+ *  Item {
+ *    id: number,
+ *    title: string,
+ *    completed: boolean
+ *  }
+ */
+
 function App() {
   const [items, setItems] = useState([]);
 

@@ -6,7 +6,7 @@ function ListItem({item}) {
                  checked={item.completed}
                  type="checkbox"/>
           <label>{item.title}</label>
-          <button className="destroy"/>
+          <button className="destroy" />
         </div>
         <input className="edit"/>
       </li>
