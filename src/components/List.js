@@ -1,29 +1,7 @@
 import ListItem from "./Item";
+import {useEffect, useRef, useState} from "react";
 
 function List(props) {
-
-  // todo: simple way to iterate and create
-  // todo: React elements
-  // function buildList() {
-  //   const listItems = [];
-  //
-  //   for(let i =0; i < props.items.length; i++) {
-  //     listItems.push(
-  //         <li>
-  //           <div className="view">
-  //             <input className="toggle"
-  //                    type="checkbox" />
-  //             <label>{props.items[i].title}</label>
-  //             <button className="destroy" />
-  //           </div>
-  //           <input className="edit" />
-  //         </li>
-  //     )
-  //   }
-  //
-  //   return listItems;
-  // }
-
   return (
       <section className="main">
         <input className="toggle-all"
