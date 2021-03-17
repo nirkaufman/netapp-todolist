@@ -1,12 +1,12 @@
 import TodolistPage from "./pages/todolist-page";
 import SignIn from "./pages/sign-in";
 
-import {BrowserRouter, Link, Route} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 import TasksPage from "./pages/tasks-page";
 
 function App() {
   return (
-      <BrowserRouter>
+      <>
         <ul>
           <li>
             <Link to="/">login</Link>
@@ -30,8 +30,7 @@ function App() {
         <Route path="/tasks">
           <TasksPage/>
         </Route>
-
-      </BrowserRouter>
+      </>
   )
 }
 

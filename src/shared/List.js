@@ -1,15 +1,17 @@
 import ListItem from "./Item";
-import {useEffect, useRef, useState} from "react";
+import {useSelector} from "react-redux";
 
-function List(props) {
+function List() {
+  const items = useSelector( state => state.items );
+
   return (
       <section className="main">
         <input className="toggle-all"
                type="checkbox"/>
         <ul className="todo-list">
-          {props.items.map((item, index) =>  (
+          {items.map((item) =>  (
               <ListItem key={item.id} item={item}
-                        onRemoveItem={() => props.onRemoveItem(index)} /> )
+                        onRemoveItem={() => {}} /> )
           )}
         </ul>
       </section>

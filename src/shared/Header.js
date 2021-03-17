@@ -1,8 +1,11 @@
 import {useEffect, useRef} from 'react';
 import styled from "styled-components";
+import {useDispatch} from "react-redux";
+import {addItem} from "../redux/actions/list.actions";
 
-function Header({onAddItem, enableAdd, title}) {
-  const inputRef = useRef(); // {current: null}
+function Header({enableAdd, title}) {
+  const inputRef = useRef();// {current: null}
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // inputRef.current.disabled = !enableAdd;
@@ -10,7 +13,11 @@ function Header({onAddItem, enableAdd, title}) {
 
   function handleKeyDown(event) {
     if(event.code === 'Enter') {
-      onAddItem(inputRef.current.value);
+      dispatch(addItem({
+        id: Date.now,
+        title: inputRef.current.value,
+        completed: false
+      }))
       inputRef.current.value = '';
     }
   }
