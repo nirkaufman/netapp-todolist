@@ -21,3 +21,25 @@ export function removeAllItems() {
   }
 }
 
+export function fetchItems() {
+  return {
+    type: 'fetchItems',
+  }
+}
+
+export function fetchItemsSuccess(items) {
+  return {
+    type: 'fetchItemsSuccess',
+    payload: items
+  }
+}
+
+export function fetchItemsFailed(error) {
+  return {
+    type: 'fetchItemsFailed',
+    payload: error
+  }
+}
+
+
+

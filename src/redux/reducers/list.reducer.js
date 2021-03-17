@@ -7,6 +7,9 @@ export function listReducer(currentItems = [], itemsAction) {
     case 'removeAll':
       return [];
 
+    case 'fetchItemsSuccess':
+      return itemsAction.payload;
+
     default:
       return currentItems;
   }

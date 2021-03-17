@@ -1,8 +1,15 @@
+import {useEffect} from 'react';
 import ListItem from "./Item";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchItems} from "../redux/actions/list.actions";
 
 function List() {
   const items = useSelector( state => state.items );
+  const dispatch = useDispatch();
+
+  useEffect(()=> {
+    dispatch(fetchItems())
+  }, []);
 
   return (
       <section className="main">
