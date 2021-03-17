@@ -8,7 +8,7 @@ function List(props) {
                type="checkbox"/>
         <ul className="todo-list">
           {props.items.map((item, index) =>  (
-              <ListItem item={item}
+              <ListItem key={item.id} item={item}
                         onRemoveItem={() => props.onRemoveItem(index)} /> )
           )}
         </ul>

@@ -1,33 +1,33 @@
-import {useState, useEffect, useRef} from 'react';
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import List from "./components/List";
-import {useList} from "./services/use-list";
+import Todolist from "./pages/todolist";
+import SignIn from "./pages/sign-in";
 
+import {BrowserRouter, Link, Route} from "react-router-dom";
 
-/**
- *  Item {
- *    id: number,
- *    title: string,
- *    completed: boolean
- *  }
- */
 function App() {
-  const [todos, addTodo] = useList('todos', [], 2);
-  const [users, addUser] = useList('users', [], 3);
-
-  const addItem = (title) => {
-    addTodo({ id: 1, title, completed: false })
-  }
-
   return (
-      <section className="todoapp">
-        <Header title="Todos" onAddItem={addItem}/>
-        <List items={todos}  />
-        {/* <Users users={} />*/}
-        <Footer />
-      </section>
-  );
+      <BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/">login</Link>
+          </li>
+          <li>
+            <Link to="/todos">todos</Link>
+          </li>
+        </ul>
+
+        <Route exact path="/">
+          <SignIn/>
+        </Route>
+
+        <Route path="/todos">
+          {/*todo: pass a title to todolist*/}
+          <Todolist/>
+        </Route>
+
+      {/* route to '/task  */}
+
+      </BrowserRouter>
+  )
 }
 
 export default App;
