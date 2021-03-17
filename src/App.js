@@ -1,7 +1,8 @@
-import Todolist from "./pages/todolist";
+import TodolistPage from "./pages/todolist-page";
 import SignIn from "./pages/sign-in";
 
 import {BrowserRouter, Link, Route} from "react-router-dom";
+import TasksPage from "./pages/tasks-page";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
           <li>
             <Link to="/todos">todos</Link>
           </li>
+          <li>
+            <Link to="/tasks">tasks</Link>
+          </li>
         </ul>
 
         <Route exact path="/">
@@ -20,11 +24,12 @@ function App() {
         </Route>
 
         <Route path="/todos">
-          {/*todo: pass a title to todolist*/}
-          <Todolist/>
+          <TodolistPage/>
         </Route>
 
-      {/* route to '/task  */}
+        <Route path="/tasks">
+          <TasksPage/>
+        </Route>
 
       </BrowserRouter>
   )
