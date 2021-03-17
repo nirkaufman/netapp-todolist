@@ -1,4 +1,5 @@
 import {useEffect, useRef} from 'react';
+import styled from "styled-components";
 
 function Header({onAddItem, enableAdd, title}) {
   const inputRef = useRef(); // {current: null}
@@ -16,7 +17,7 @@ function Header({onAddItem, enableAdd, title}) {
 
   return (
       <header className="header">
-        <h1>{title}</h1>
+        <HeaderTitle>{title}</HeaderTitle>
         <input className="new-todo"
                ref={inputRef}
                onKeyDown={handleKeyDown}
@@ -24,5 +25,9 @@ function Header({onAddItem, enableAdd, title}) {
       </header>
   )
 }
+
+const HeaderTitle = styled.h1`
+  color: red;
+`
 
 export default Header;

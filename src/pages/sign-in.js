@@ -1,13 +1,17 @@
+import {Container, Title} from "../shared/styles";
 
 function SignIn() {
   return (
-      <div>
-        <h2>Sign in</h2>
-        <input type="text" placeholder="username"/>
+      <Container>
+        <Title>Sign in</Title>
+        <input className='login-input' type="text" placeholder="username"/>
         <br />
-        <input type="password" placeholder="password"/>
-      </div>
+        <input className='login-input' type="password" placeholder="password"/>
+        <button>submit</button>
+      </Container>
   )
 }
+
+
 
 export default SignIn
